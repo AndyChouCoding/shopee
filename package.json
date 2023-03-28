@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "prettier": "^2.8.7"
+  },
+  "scripts":"prettier -w ./src"
+} 
