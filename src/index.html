@@ -11,7 +11,6 @@
         integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./index.js">
-    <!-- <link rel="stylesheet" rel="icon" href="./images/logoIcon.ico" > -->
     <link href = "./images/logoIcon.ico" rel="icon" type="images/logoIcon">
     <title>Shopee</title>
 </head>
@@ -151,15 +150,15 @@
                             <label for="offcanvas-check4">清潔類</label>
                         </div>
                         <!-- collapse  -->
-                        <p>
-                            <button class="btn align-items-center" type="button" style="border:0px;" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                        <p id="filter-mobile-collapse-btn">
+                            <button class="btn align-items-center" type="button" style="border:0px;" data-bs-toggle="collapse" data-bs-target="#filter-mobile-collapse" aria-expanded="false" aria-controls="collapseExample">
+                                <svg id="filter-mobile-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
                                     <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
                                 </svg>
-                                顯示更多
+                                <span id="filter-mobile-collapse-text" >顯示更多</span>
                             </button>
                         </p>
-                          <div class="collapse" id="collapseExample">
+                          <div class="collapse" id="filter-mobile-collapse">
                             <div  class="form-check mb-2">
                                <input type="checkbox" id="offcanvas-check5">
                                <label for="offcanvas-check5">婦幼類</label>
@@ -186,9 +185,9 @@
                         <hr>
                         <p class="fw-bold fs-5">價格範圍</p>
                         <div class="form-check mb-2 d-flex ">
-                            <input type="text" class="flex-grow-1 from-control" placeholder="最高價">
+                            <input type="text" class=" from-control" placeholder="最高價">
                             <hr style="width:50px">
-                            <input type="text" class="flex-grow-1 from-control" placeholder="最低價">
+                            <input type="text" class=" from-control" placeholder="最低價">
                         </div>
                         <button type="button" class="btn w-100 mt-2 text-white" style="background-color:#fb5830">套用</button>
                     </div>
