@@ -1,23 +1,12 @@
-import "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
-import "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
-import ""
+import "bootstrap/js/dist/carousel";
+import Offcanvas from "bootstrap/js/dist/offcanvas";
+import Collapse from "bootstrap/js/dist/collapse";
+import Modal from "bootstrap/js/dist/modal";
 
-function collapseMobileHandler () {
-    const collapseMobile = document.getElementById("filter-mobile-collapse");
-    const collapseBtnMobile = document.getElementById("filter-mobile-collapse-btn");
-    const collapseBtnTextMobile =document.getElementById("filter-mobile-btn-text");
-    const filterIconMobile = document.getElementById("filter-mobile-icon")
-    const bsCollapseMobile = new Collapse(collapseMobile,{
-        toggle:false,
-    });
-
-
-    collapseBtnMobile.addEventListener("click",function(){
-        bsCollapseMobile.toggle();
-    });
-    collapseMobile.addEventListener("show.bs.collapse",function(){
-        collapseBtnTextMobile.innerText("收起");
-    })
-
+function collapsePCHandler() {
+    // get elements
+    const collapse = document.getElementById("filter-collapse");
+    const collapseBtn = document.getElementById("filter-collapse-btn");
+    const collapseBtnText = document.getElementById("filter-btn-text");
+    const filterIcon = document.getElementById("filter-icon");
 }
-

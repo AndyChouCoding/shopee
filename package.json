@@ -2,5 +2,8 @@
   "devDependencies": {
     "prettier": "^2.8.7"
   },
-  "scripts":"prettier -w ./src"
-} 
+  "scripts": "prettier -w ./src",
+  "dependencies": {
+    "bootstrap": "^5.3.0-alpha2"
+  }
+}

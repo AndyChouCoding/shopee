@@ -11,11 +11,12 @@
         integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./index.js">
-    <link href = "./images/logoIcon.ico" rel="icon" type="images/logoIcon">
+    <link href="./images/logoIcon.ico" rel="icon" type="images/logoIcon">
     <title>Shopee</title>
 </head>
 
 <body>
+    <!-- navbar -->
     <nav class="navbar navbar-expand-lg sticky-top text-white py-3 py-md-2" style="background-color: #fb5830">
         <div class="container-md flex-column ">
             <div class=" d-flex justify-content-between align-items-center w-100 fs-6 ">
@@ -52,6 +53,7 @@
                         </svg>
                     </button>
                     <button
+                        id="cart-btn"
                         class="btn flex-shrink-0 w-50px d-flex justify-content-center align-items-center shadow-none">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-cart-plus" viewBox="0 0 16 16">
@@ -65,7 +67,7 @@
             </div>
 
     </nav>
-    <!-- navbar -->
+    <!-- carousel Banner -->
     <div id="carouselExampleIndicators" class="carousel slide">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
@@ -97,34 +99,153 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
-    <!-- carousel Banner -->
+    <!-- content UI -->
     <div class="container-md">
         <div class="row p-4">
-            <div class="col-2 d-none d-md-block">left</div>
-            <div class="col d-flex justify-content-between align-items-center">
-                <div class="d-flex align-items-center fw-bold">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class=" bi bi-lightbulb" viewBox="0 0 16 16">
-                        <path
-                            d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13a.5.5 0 0 1 0 1 .5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1 0-1 .5.5 0 0 1 0-1 .5.5 0 0 1-.46-.302l-.761-1.77a1.964 1.964 0 0 0-.453-.618A5.984 5.984 0 0 1 2 6zm6-5a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1z" />
-                    </svg>
-                    <div class="ps-2 pe-1" style="color:#fb5830;">沐浴乳</div>
-                    <div>的搜尋結果</div>
+            <!-- computer Left UI  , mobile None , -->
+            <div class="col-3 d-none d-md-block">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h5 class="offcanvas-title" id="offcanvasScrollingLabel">條件篩選</h5>
                 </div>
-                <button
-                    class="border bg-white shadow-none flex-shrink-0 d-flex justify-content-center align-items-center"
-                    type="button" id="mobile_filter_btn">
+                <div class="offcanvas-body">
+                    <p class="fw-bold fs-6 mt-2">分類</p>
+                    <div class="form-check">
+                        <input type="checkbox" id="offcanvas-check1">
+                        <label for="offcanvas-check1">家電類</label>
+                    </div>
+                    <div class="form-check mb-2">
+                        <input type="checkbox" id="offcanvas-check2">
+                        <label for="offcanvas-check2">食品類</label>
+                    </div>
+                    <div class="form-check mb-2">
+                        <input type="checkbox" id="offcanvas-check3">
+                        <label for="offcanvas-check3">遊戲類</label>
+                    </div>
+                    <div class="form-check mb-2">
+                        <input type="checkbox" id="offcanvas-check4">
+                        <label for="offcanvas-check4">清潔類</label>
+                    </div>
+                    <!-- collapse  -->
+                    <p id="filter-collapse">
+                        <button id="filter-collapse-btn" class="btn align-items-center" type="button"
+                            style="border:0px;" data-bs-toggle="collapse" data-bs-target="#filter-mobile-collapse"
+                            aria-expanded="false" aria-controls="collapseExample">
+                            <svg id="filter-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+                            </svg>
+                            <span id="filter-btn-text">顯示更多</span>
+                        </button>
+                    </p>
+                    <div class="collapse" id="filter-mobile-collapse">
+                        <div class="form-check mb-2">
+                            <input type="checkbox" id="offcanvas-check5">
+                            <label for="offcanvas-check5">婦幼類</label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input type="checkbox" id="offcanvas-check6">
+                            <label for="offcanvas-check6">工具類</label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input type="checkbox" id="offcanvas-check7">
+                            <label for="offcanvas-check7">成人類</label>
+                        </div>
+                    </div>
+                    <hr>
+                    <p class="fw-bold fs-5">出貨地點</p>
+                    <div class="form-check mb-2">
+                        <input type="checkbox" id="offcanvas-location-check1">
+                        <label for="offcanvas-location-check1">海外</label>
+                    </div>
+                    <div class="form-check mb-2">
+                        <input type="checkbox" id="offcanvas-location-check2">
+                        <label for="offcanvas-location-check2">海內</label>
+                    </div>
+                    <hr>
+                    <p class="fw-bold fs-5">價格範圍</p>
+                    <div class="form-check mb-2 d-flex ">
+                        <input style="width:50px;" type="text" class="" placeholder="高">
+                        <hr style="width:50px">
+                        <input style="width:50px;" type="text" class="" placeholder="低">
+                    </div>
+                    <button type="button" class="btn w-100 mt-2 text-white" style="background-color:#fb5830">套用</button>
+                </div>
+            </div>
 
-                </button>
-                <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling"
-                    aria-controls="offcanvasScrolling">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                        class="bi bi-filter " viewBox="0 0 16 16" style="color:#fb5830">
-                        <path
-                            d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z" />
-                    </svg>
-                </button>
+            <!-- computer Right UI , mobile full  -->
+            <div class="col">
+                <div class="d-flex justify-content-between">
+                    <div class="d-flex  align-items-center fw-bold">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class=" bi bi-lightbulb" viewBox="0 0 16 16">
+                            <path
+                                d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13a.5.5 0 0 1 0 1 .5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1 0-1 .5.5 0 0 1 0-1 .5.5 0 0 1-.46-.302l-.761-1.77a1.964 1.964 0 0 0-.453-.618A5.984 5.984 0 0 1 2 6zm6-5a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1z" />
+                        </svg>
+                        <div class="ps-2 pe-1" style="color:#fb5830;">沐浴乳</div>
+                        <div>的搜尋結果</div>
+                        <div class=" d-flex align-items-start ">
+                        </div>
+                    </div>
+                    <button class="btn d-sm-block d-md-none" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                            class="bi bi-filter " viewBox="0 0 16 16" style="color:#fb5830">
+                            <path
+                                d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z" />
+                        </svg>
+                    </button>
+                </div>
+                <!-- nav-pill  -->
+                <ul class="nav nav-pills d-flex justify-content-around rounded mt-4 py-2"
+                    style="background-color: rgb(223, 223, 223);">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" style="background-color:#fb5830;">綜合排名</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color:#fb5830;" href="#">最新商品</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color:#fb5830;" href="#">熱門商品</a>
+                    </li>
+                </ul>
+                <!-- shopee-store -->
+                <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-clos-xl-5">
+                    <div class="col mt-2 box-border border-gray border">
+                        <div class=" d-flex justify-content-center  border-gray border" ><img src="./images/store/store1.jpeg" class="" style="width:250px;"></div>
+                        <div class=" d-flex justify-content-center"><p>100$</p></div>
+                    </div>
+                    <div class="col mt-2 box-border border-gray border">
+                        <div class=" d-flex justify-content-center  border-gray border" ><img src="./images/store/store1.jpeg" class="" style="width:250px;"></div>
+                        <div class=" d-flex justify-content-center"><p>100$</p></div>
+                    </div>
+                    <div class="col mt-2 box-border border-gray border">
+                        <div class=" d-flex justify-content-center  border-gray border" ><img src="./images/store/store1.jpeg" class="" style="width:250px;"></div>
+                        <div class=" d-flex justify-content-center"><p>100$</p></div>
+                    </div>
+                    <div class="col mt-2 box-border border-gray border">
+                        <div class=" d-flex justify-content-center  border-gray border" ><img src="./images/store/store1.jpeg" class="" style="width:250px;"></div>
+                        <div class=" d-flex justify-content-center"><p>100$</p></div>
+                    </div>
+                    <div class="col mt-2 box-border border-gray border">
+                        <div class=" d-flex justify-content-center  border-gray border" ><img src="./images/store/store1.jpeg" class="" style="width:250px;"></div>
+                        <div class=" d-flex justify-content-center"><p>100$</p></div>
+                    </div>
+                    <div class="col mt-2 box-border border-gray border">
+                        <div class=" d-flex justify-content-center  border-gray border" ><img src="./images/store/store1.jpeg" class="" style="width:250px;"></div>
+                        <div class=" d-flex justify-content-center"><p>100$</p></div>
+                    </div>
+                    <div class="col mt-2 box-border border-gray border">
+                        <div class=" d-flex justify-content-center  border-gray border" ><img src="./images/store/store1.jpeg" class="" style="width:250px;"></div>
+                        <div class=" d-flex justify-content-center"><p>100$</p></div>
+                    </div>
+                    <div class="col mt-2 box-border border-gray border">
+                        <div class=" d-flex justify-content-center  border-gray border" ><img src="./images/store/store1.jpeg" class="" style="width:250px;"></div>
+                        <div class=" d-flex justify-content-center"><p>100$</p></div>
+                    </div>
+                </div>
 
+                <!-- collapse btn -->
                 <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
                     style="width:100%" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
                     <div class="offcanvas-header">
@@ -149,29 +270,32 @@
                             <input type="checkbox" id="offcanvas-check4">
                             <label for="offcanvas-check4">清潔類</label>
                         </div>
-                        <!-- collapse  -->
-                        <p id="filter-mobile-collapse-btn">
-                            <button class="btn align-items-center" type="button" style="border:0px;" data-bs-toggle="collapse" data-bs-target="#filter-mobile-collapse" aria-expanded="false" aria-controls="collapseExample">
-                                <svg id="filter-mobile-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
-                                    <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+                        <p id="filter-collapse">
+                            <button id="filter-collapse-btn" class="btn align-items-center" type="button"
+                                style="border:0px;" data-bs-toggle="collapse" data-bs-target="#filter-mobile-collapse"
+                                aria-expanded="false" aria-controls="collapseExample">
+                                <svg id="filter-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
                                 </svg>
-                                <span id="filter-mobile-collapse-text" >顯示更多</span>
+                                <span id="filter-btn-text">顯示更多</span>
                             </button>
                         </p>
-                          <div class="collapse" id="filter-mobile-collapse">
-                            <div  class="form-check mb-2">
-                               <input type="checkbox" id="offcanvas-check5">
-                               <label for="offcanvas-check5">婦幼類</label>
+                        <div class="collapse" id="filter-mobile-collapse">
+                            <div class="form-check mb-2">
+                                <input type="checkbox" id="offcanvas-check5">
+                                <label for="offcanvas-check5">婦幼類</label>
                             </div>
                             <div class="form-check mb-2">
                                 <input type="checkbox" id="offcanvas-check6">
                                 <label for="offcanvas-check6">工具類</label>
                             </div>
-                            <div  class="form-check mb-2">
-                               <input type="checkbox" id="offcanvas-check7">
-                               <label for="offcanvas-check7">成人類</label>
+                            <div class="form-check mb-2">
+                                <input type="checkbox" id="offcanvas-check7">
+                                <label for="offcanvas-check7">成人類</label>
                             </div>
-                          </div>
+                        </div>
                         <hr>
                         <p class="fw-bold fs-5">出貨地點</p>
                         <div class="form-check mb-2">
@@ -189,10 +313,16 @@
                             <hr style="width:50px">
                             <input type="text" class=" from-control" placeholder="最低價">
                         </div>
-                        <button type="button" class="btn w-100 mt-2 text-white" style="background-color:#fb5830">套用</button>
+                        <button type="button" class="btn w-100 mt-2 text-white"
+                            style="background-color:#fb5830">套用</button>
                     </div>
                 </div>
+
             </div>
+
+            <div></div>
+            <div></div>
+
         </div>
     </div>
 
