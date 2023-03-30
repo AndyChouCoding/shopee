@@ -15,7 +15,7 @@
     <title>Shopee</title>
 </head>
 
-<body>
+<body class="">
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg sticky-top text-white py-3 py-md-2" style="background-color: #fb5830">
         <div class="container-md flex-column ">
@@ -44,6 +44,7 @@
                 <div class="d-flex flex-grow-1">
                     <input class="form-control me-2 shadow-none" type="search" placeholder="搜尋商品" aria-label="Search"
                         value="特價品">
+                    <!-- search-btn -->
                     <button
                         class="btn flex-shrink-0 w-50px d-flex justify-content-center border border-white me-2 align-items-center shadow-none">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -52,9 +53,10 @@
                                 d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                         </svg>
                     </button>
-                    <button
-                        id="cart-btn"
-                        class="btn flex-shrink-0 w-50px d-flex justify-content-center align-items-center shadow-none">
+                    <!-- cart-btn -->
+                    <button id="cart-btn"
+                        class="btn flex-shrink-0 w-50px d-flex justify-content-center align-items-center shadow-none"
+                        type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-cart-plus" viewBox="0 0 16 16">
                             <path
@@ -68,32 +70,24 @@
 
     </nav>
     <!-- carousel Banner -->
-    <div id="carouselExampleIndicators" class="carousel slide">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner ">
-            <div class="carousel-item active ">
+    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="5000">
+                <img src="./images/carousel/banner1.jpeg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" data-bs-interval="1000">
                 <img src="./images/carousel/banner1.jpeg" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="./images/carousel/banner1.jpeg" class="d-block w-100 " alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="./images/carousel/banner1.jpeg" class="d-block w-100 " alt="...">
+                <img src="./images/carousel/banner1.jpeg" class="d-block w-100" alt="...">
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
             data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
             data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
@@ -172,7 +166,6 @@
                     <button type="button" class="btn w-100 mt-2 text-white" style="background-color:#fb5830">套用</button>
                 </div>
             </div>
-
             <!-- computer Right UI , mobile full  -->
             <div class="col">
                 <div class="d-flex justify-content-between">
@@ -212,123 +205,315 @@
                 <!-- shopee-store -->
                 <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-clos-xl-5">
                     <div class="col mt-2 box-border border-gray border">
-                        <div class=" d-flex justify-content-center  border-gray border" ><img src="./images/store/store1.jpeg" class="" style="width:250px;"></div>
-                        <div class=" d-flex justify-content-center"><p>100$</p></div>
+                        <div class=" d-flex justify-content-center  border-gray position-relative">
+                            <span class=" text-white p-2 rounded-3 position-absolute top-0 end-0"
+                                style="background-color:#fb5830;">雙11優惠
+                            </span>
+                            <img src="./images/store/store1.jpeg" class="" style="width:200px;">
+                        </div>
+                        <div class=" d-flex justify-content-center">
+                            <p>100$</p>
+                        </div>
                     </div>
                     <div class="col mt-2 box-border border-gray border">
-                        <div class=" d-flex justify-content-center  border-gray border" ><img src="./images/store/store1.jpeg" class="" style="width:250px;"></div>
-                        <div class=" d-flex justify-content-center"><p>100$</p></div>
+                        <div class=" d-flex justify-content-center  border-gray position-relative">
+                            <span class=" text-white p-2 rounded-3 position-absolute top-0 end-0"
+                                style="background-color:#fb5830;">雙11優惠
+                            </span>
+                            <img src="./images/store/store1.jpeg" class="" style="width:200px;">
+                        </div>
+                        <div class=" d-flex justify-content-center">
+                            <p>100$</p>
+                        </div>
                     </div>
                     <div class="col mt-2 box-border border-gray border">
-                        <div class=" d-flex justify-content-center  border-gray border" ><img src="./images/store/store1.jpeg" class="" style="width:250px;"></div>
-                        <div class=" d-flex justify-content-center"><p>100$</p></div>
+                        <div class=" d-flex justify-content-center  border-gray position-relative">
+                            <span class=" text-white p-2 rounded-3 position-absolute top-0 end-0"
+                                style="background-color:#fb5830;">雙11優惠
+                            </span>
+                            <img src="./images/store/store1.jpeg" class="" style="width:200px;">
+                        </div>
+                        <div class=" d-flex justify-content-center">
+                            <p>100$</p>
+                        </div>
                     </div>
                     <div class="col mt-2 box-border border-gray border">
-                        <div class=" d-flex justify-content-center  border-gray border" ><img src="./images/store/store1.jpeg" class="" style="width:250px;"></div>
-                        <div class=" d-flex justify-content-center"><p>100$</p></div>
+                        <div class=" d-flex justify-content-center  border-gray position-relative">
+                            <span class=" text-white p-2 rounded-3 position-absolute top-0 end-0"
+                                style="background-color:#fb5830;">雙11優惠
+                            </span>
+                            <img src="./images/store/store1.jpeg" class="" style="width:200px;">
+                        </div>
+                        <div class=" d-flex justify-content-center">
+                            <p>100$</p>
+                        </div>
                     </div>
                     <div class="col mt-2 box-border border-gray border">
-                        <div class=" d-flex justify-content-center  border-gray border" ><img src="./images/store/store1.jpeg" class="" style="width:250px;"></div>
-                        <div class=" d-flex justify-content-center"><p>100$</p></div>
+                        <div class=" d-flex justify-content-center  border-gray position-relative">
+                            <span class=" text-white p-2 rounded-3 position-absolute top-0 end-0"
+                                style="background-color:#fb5830;">雙11優惠
+                            </span>
+                            <img src="./images/store/store1.jpeg" class="" style="width:200px;">
+                        </div>
+                        <div class=" d-flex justify-content-center">
+                            <p>100$</p>
+                        </div>
                     </div>
                     <div class="col mt-2 box-border border-gray border">
-                        <div class=" d-flex justify-content-center  border-gray border" ><img src="./images/store/store1.jpeg" class="" style="width:250px;"></div>
-                        <div class=" d-flex justify-content-center"><p>100$</p></div>
+                        <div class=" d-flex justify-content-center  border-gray position-relative">
+                            <span class=" text-white p-2 rounded-3 position-absolute top-0 end-0"
+                                style="background-color:#fb5830;">雙11優惠
+                            </span>
+                            <img src="./images/store/store1.jpeg" class="" style="width:200px;">
+                        </div>
+                        <div class=" d-flex justify-content-center">
+                            <p>100$</p>
+                        </div>
                     </div>
                     <div class="col mt-2 box-border border-gray border">
-                        <div class=" d-flex justify-content-center  border-gray border" ><img src="./images/store/store1.jpeg" class="" style="width:250px;"></div>
-                        <div class=" d-flex justify-content-center"><p>100$</p></div>
+                        <div class=" d-flex justify-content-center  border-gray position-relative">
+                            <span class=" text-white p-2 rounded-3 position-absolute top-0 end-0"
+                                style="background-color:#fb5830;">雙11優惠
+                            </span>
+                            <img src="./images/store/store1.jpeg" class="" style="width:200px;">
+                        </div>
+                        <div class=" d-flex justify-content-center">
+                            <p>100$</p>
+                        </div>
                     </div>
                     <div class="col mt-2 box-border border-gray border">
-                        <div class=" d-flex justify-content-center  border-gray border" ><img src="./images/store/store1.jpeg" class="" style="width:250px;"></div>
-                        <div class=" d-flex justify-content-center"><p>100$</p></div>
+                        <div class=" d-flex justify-content-center  border-gray position-relative">
+                            <span class=" text-white p-2 rounded-3 position-absolute top-0 end-0"
+                                style="background-color:#fb5830;">雙11優惠
+                            </span>
+                            <img src="./images/store/store1.jpeg" class="" style="width:200px;">
+                        </div>
+                        <div class=" d-flex justify-content-center">
+                            <p>100$</p>
+                        </div>
                     </div>
-                </div>
+                    <div class="col mt-2 box-border border-gray border">
+                        <div class=" d-flex justify-content-center  border-gray position-relative">
+                            <span class=" text-white p-2 rounded-3 position-absolute top-0 end-0"
+                                style="background-color:#fb5830;">雙11優惠
+                            </span>
+                            <img src="./images/store/store1.jpeg" class="" style="width:200px;">
+                        </div>
+                        <div class=" d-flex justify-content-center">
+                            <p>100$</p>
+                        </div>
+                    </div>
+                    <div class="col mt-2 box-border border-gray border">
+                        <div class=" d-flex justify-content-center  border-gray position-relative">
+                            <span class=" text-white p-2 rounded-3 position-absolute top-0 end-0"
+                                style="background-color:#fb5830;">雙11優惠
+                            </span>
+                            <img src="./images/store/store1.jpeg" class="" style="width:200px;">
+                        </div>
+                        <div class=" d-flex justify-content-center">
+                            <p>100$</p>
+                        </div>
+                    </div>
 
-                <!-- collapse btn -->
-                <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
-                    style="width:100%" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
-                    <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasScrollingLabel">條件篩選</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <!-- collapse btn -->
+                    <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+                        style="width:100%" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasScrollingLabel">條件篩選</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <p class="fw-bold fs-5">分類</p>
+                            <div class="form-check mb-2">
+                                <input type="checkbox" id="offcanvas-check1">
+                                <label for="offcanvas-check1">家電類</label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input type="checkbox" id="offcanvas-check2">
+                                <label for="offcanvas-check2">食品類</label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input type="checkbox" id="offcanvas-check3">
+                                <label for="offcanvas-check3">遊戲類</label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input type="checkbox" id="offcanvas-check4">
+                                <label for="offcanvas-check4">清潔類</label>
+                            </div>
+                            <p id="filter-collapse">
+                                <button id="filter-collapse-btn" class="btn align-items-center" type="button"
+                                    style="border:0px;" data-bs-toggle="collapse"
+                                    data-bs-target="#filter-mobile-collapse" aria-expanded="false"
+                                    aria-controls="collapseExample">
+                                    <svg id="filter-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                        fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+                                    </svg>
+                                    <span id="filter-btn-text">顯示更多</span>
+                                </button>
+                            </p>
+                            <div class="collapse" id="filter-mobile-collapse">
+                                <div class="form-check mb-2">
+                                    <input type="checkbox" id="offcanvas-check5">
+                                    <label for="offcanvas-check5">婦幼類</label>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input type="checkbox" id="offcanvas-check6">
+                                    <label for="offcanvas-check6">工具類</label>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input type="checkbox" id="offcanvas-check7">
+                                    <label for="offcanvas-check7">成人類</label>
+                                </div>
+                            </div>
+                            <hr>
+                            <p class="fw-bold fs-5">出貨地點</p>
+                            <div class="form-check mb-2">
+                                <input type="checkbox" id="offcanvas-location-check1">
+                                <label for="offcanvas-location-check1">海外</label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input type="checkbox" id="offcanvas-location-check2">
+                                <label for="offcanvas-location-check2">海內</label>
+                            </div>
+                            <hr>
+                            <p class="fw-bold fs-5">價格範圍</p>
+                            <div class="form-check mb-2 d-flex ">
+                                <input type="text" class=" from-control" placeholder="最高價">
+                                <hr style="width:50px">
+                                <input type="text" class=" from-control" placeholder="最低價">
+                            </div>
+                            <button type="button" class="btn w-100 mt-2 text-white"
+                                style="background-color:#fb5830">套用</button>
+                        </div>
                     </div>
-                    <div class="offcanvas-body">
-                        <p class="fw-bold fs-5">分類</p>
-                        <div class="form-check mb-2">
-                            <input type="checkbox" id="offcanvas-check1">
-                            <label for="offcanvas-check1">家電類</label>
-                        </div>
-                        <div class="form-check mb-2">
-                            <input type="checkbox" id="offcanvas-check2">
-                            <label for="offcanvas-check2">食品類</label>
-                        </div>
-                        <div class="form-check mb-2">
-                            <input type="checkbox" id="offcanvas-check3">
-                            <label for="offcanvas-check3">遊戲類</label>
-                        </div>
-                        <div class="form-check mb-2">
-                            <input type="checkbox" id="offcanvas-check4">
-                            <label for="offcanvas-check4">清潔類</label>
-                        </div>
-                        <p id="filter-collapse">
-                            <button id="filter-collapse-btn" class="btn align-items-center" type="button"
-                                style="border:0px;" data-bs-toggle="collapse" data-bs-target="#filter-mobile-collapse"
-                                aria-expanded="false" aria-controls="collapseExample">
-                                <svg id="filter-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                    fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
-                                    <path
-                                        d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
-                                </svg>
-                                <span id="filter-btn-text">顯示更多</span>
-                            </button>
-                        </p>
-                        <div class="collapse" id="filter-mobile-collapse">
-                            <div class="form-check mb-2">
-                                <input type="checkbox" id="offcanvas-check5">
-                                <label for="offcanvas-check5">婦幼類</label>
-                            </div>
-                            <div class="form-check mb-2">
-                                <input type="checkbox" id="offcanvas-check6">
-                                <label for="offcanvas-check6">工具類</label>
-                            </div>
-                            <div class="form-check mb-2">
-                                <input type="checkbox" id="offcanvas-check7">
-                                <label for="offcanvas-check7">成人類</label>
-                            </div>
-                        </div>
-                        <hr>
-                        <p class="fw-bold fs-5">出貨地點</p>
-                        <div class="form-check mb-2">
-                            <input type="checkbox" id="offcanvas-location-check1">
-                            <label for="offcanvas-location-check1">海外</label>
-                        </div>
-                        <div class="form-check mb-2">
-                            <input type="checkbox" id="offcanvas-location-check2">
-                            <label for="offcanvas-location-check2">海內</label>
-                        </div>
-                        <hr>
-                        <p class="fw-bold fs-5">價格範圍</p>
-                        <div class="form-check mb-2 d-flex ">
-                            <input type="text" class=" from-control" placeholder="最高價">
-                            <hr style="width:50px">
-                            <input type="text" class=" from-control" placeholder="最低價">
-                        </div>
-                        <button type="button" class="btn w-100 mt-2 text-white"
-                            style="background-color:#fb5830">套用</button>
-                    </div>
-                </div>
 
+                </div>
             </div>
-
-            <div></div>
-            <div></div>
-
         </div>
     </div>
-
-
-
-
+    <!--cartModal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">購物車</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div class="d-flex align-items-center justify-content-between w-100">
+                                <div><img src="./images/store/store1.jpeg" style="width:50px;"></div>
+                                <p class="mx-0 my-2 d-flex">Iphone</p>
+                                <p class="mx-0 my-2 d-flex" style="color:#fb5830;">100$</p>
+                                <svg style="color:#fb5830;" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
+                                    <path
+                                        d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z" />
+                                </svg>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="d-flex align-items-center justify-content-between w-100">
+                                <div><img src="./images/store/store1.jpeg" style="width:50px;"></div>
+                                <p class="mx-0 my-2 d-flex">Iphone</p>
+                                <p class="mx-0 my-2 d-flex" style="color:#fb5830;">100$</p>
+                                <svg style="color:#fb5830;" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
+                                    <path
+                                        d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z" />
+                                </svg>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="d-flex align-items-center justify-content-between w-100">
+                                <div><img src="./images/store/store1.jpeg" style="width:50px;"></div>
+                                <p class="mx-0 my-2 d-flex">Iphone</p>
+                                <p class="mx-0 my-2 d-flex" style="color:#fb5830;">100$</p>
+                                <svg style="color:#fb5830;" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
+                                    <path
+                                        d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z" />
+                                </svg>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer d-flex justify-content-between">
+                    <p class="fw-bold">共<sapn class="text-danger text-bold"> 3 </sapn>筆項目</p>
+                    <button type="button" class="btn text-white" style="background: #fb5830;">去買單</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <footer class=" d-flex justify-content-around align-items-start mt-3 p-5 bg-body-secondary">
+        <div class="">
+            <h4 class="fw-bold mb-3">客服中心</h4>
+            <div class="" style="width:80px;">
+                <a href="#"
+                    class="list-none link-dark link-offset-0 link-underline-opacity-0 link-underline-opacity-100-hover my-2">蝦皮商城</a>
+                <a href="#"
+                    class="list-none link-dark link-offset-0 link-underline-opacity-0 link-underline-opacity-100-hover my-2">付款方式</a>
+                <a href="#"
+                    class="list-none link-dark link-offset-0 link-underline-opacity-0 link-underline-opacity-100-hover my-2">蝦皮錢包</a>
+                <a href="#"
+                    class="list-none link-dark link-offset-0 link-underline-opacity-0 link-underline-opacity-100-hover my-2">退貨退款</a>
+                <a href="#"
+                    class="list-none link-dark link-offset-0 link-underline-opacity-0 link-underline-opacity-100-hover my-2">聯絡客服</a>
+            </div>
+        </div>
+        <div class="">
+            <h4 class="fw-bold mb-3">關於蝦皮</h4>
+            <div class="" style="width:80px;">
+                <a href="#"
+                    class="list-none link-dark link-offset-0 link-underline-opacity-0 link-underline-opacity-100-hover my-2">關於蝦皮</a>
+                <a href="#"
+                    class="list-none link-dark link-offset-0 link-underline-opacity-0 link-underline-opacity-100-hover my-2">加入我們</a>
+                <a href="#"
+                    class="list-none link-dark link-offset-0 link-underline-opacity-0 link-underline-opacity-100-hover my-2">蝦皮條款</a>
+                <a href="#"
+                    class="list-none link-dark link-offset-0 link-underline-opacity-0 link-underline-opacity-100-hover my-2">賣家中心</a>
+                <a href="#"
+                    class="list-none link-dark link-offset-0 link-underline-opacity-0 link-underline-opacity-100-hover my-2">限時特賣</a>
+            </div>
+        </div>
+        <div class="">
+            <h4 class="fw-bold mb-3">客服中心</h4>
+            <div class="" style="width:100px;">
+                <div class="d-flex align-items-center">
+                    <svg class="me-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-facebook" viewBox="0 0 16 16">
+                        <path
+                            d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                    </svg>
+                    <a href="#"
+                        class="list-none link-dark link-offset-0 link-underline-opacity-0 link-underline-opacity-100-hover my-2">Facebook</a>
+                </div>
+                <div class="d-flex align-items-center">
+                    <svg class="me-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-instagram" viewBox="0 0 16 16">
+                        <path
+                            d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                    </svg>
+                    <a href="#"
+                        class="list-none link-dark link-offset-0 link-underline-opacity-0 link-underline-opacity-100-hover my-2">Instagram</a>
+                </div>
+                <div class="d-flex align-items-center">
+                    <svg class="me-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-line" viewBox="0 0 16 16">
+                        <path
+                            d="M8 0c4.411 0 8 2.912 8 6.492 0 1.433-.555 2.723-1.715 3.994-1.678 1.932-5.431 4.285-6.285 4.645-.83.35-.734-.197-.696-.413l.003-.018.114-.685c.027-.204.055-.521-.026-.723-.09-.223-.444-.339-.704-.395C2.846 12.39 0 9.701 0 6.492 0 2.912 3.59 0 8 0ZM5.022 7.686H3.497V4.918a.156.156 0 0 0-.155-.156H2.78a.156.156 0 0 0-.156.156v3.486c0 .041.017.08.044.107v.001l.002.002.002.002a.154.154 0 0 0 .108.043h2.242c.086 0 .155-.07.155-.156v-.56a.156.156 0 0 0-.155-.157Zm.791-2.924a.156.156 0 0 0-.156.156v3.486c0 .086.07.155.156.155h.562c.086 0 .155-.07.155-.155V4.918a.156.156 0 0 0-.155-.156h-.562Zm3.863 0a.156.156 0 0 0-.156.156v2.07L7.923 4.832a.17.17 0 0 0-.013-.015v-.001a.139.139 0 0 0-.01-.01l-.003-.003a.092.092 0 0 0-.011-.009h-.001L7.88 4.79l-.003-.002a.029.029 0 0 0-.005-.003l-.008-.005h-.002l-.003-.002-.01-.004-.004-.002a.093.093 0 0 0-.01-.003h-.002l-.003-.001-.009-.002h-.006l-.003-.001h-.004l-.002-.001h-.574a.156.156 0 0 0-.156.155v3.486c0 .086.07.155.156.155h.56c.087 0 .157-.07.157-.155v-2.07l1.6 2.16a.154.154 0 0 0 .039.038l.001.001.01.006.004.002a.066.066 0 0 0 .008.004l.007.003.005.002a.168.168 0 0 0 .01.003h.003a.155.155 0 0 0 .04.006h.56c.087 0 .157-.07.157-.155V4.918a.156.156 0 0 0-.156-.156h-.561Zm3.815.717v-.56a.156.156 0 0 0-.155-.157h-2.242a.155.155 0 0 0-.108.044h-.001l-.001.002-.002.003a.155.155 0 0 0-.044.107v3.486c0 .041.017.08.044.107l.002.003.002.002a.155.155 0 0 0 .108.043h2.242c.086 0 .155-.07.155-.156v-.56a.156.156 0 0 0-.155-.157H11.81v-.589h1.525c.086 0 .155-.07.155-.156v-.56a.156.156 0 0 0-.155-.157H11.81v-.589h1.525c.086 0 .155-.07.155-.156Z" />
+                    </svg>
+                    <a href="#"
+                        class="list-none link-dark link-offset-0 link-underline-opacity-0 link-underline-opacity-100-hover my-2">Line</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 </body>
 
