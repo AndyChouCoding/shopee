@@ -9,7 +9,7 @@ interface PrivateRouteProps {
 const PrivateRoute: React.FC<PrivateRouteProps> = ({ children }) => {
   const { currentUser } = useAuth();
   
-  console.log('PrivateRoute currentUser:', currentUser); // 添加日志输出
+  console.log('PrivateRoute currentUser:', currentUser);
 
   if (!currentUser) {
     return <Navigate to="/signin" replace />;

@@ -32,7 +32,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     const userCredential = await auth.createUserWithEmailAndPassword(email, password);
     if (userCredential.user) {
       await userCredential.user.sendEmailVerification();
-      await auth.signOut(); // Sign out the user after registration
+      await auth.signOut(); 
     }
   };
 

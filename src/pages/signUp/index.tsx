@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useAuth } from '../../contexts/authcContext';
 import { useNavigate } from 'react-router-dom';
+import AccountBtns from '../components/accountBtns';
 
 const SignUp: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -46,7 +47,9 @@ const SignUp: React.FC = () => {
           required
         />
       </div>
-      <button type="submit">Sign Up</button>
+      <AccountBtns type='submit' onClick={()=>{}}>
+        Sign Up
+      </AccountBtns>
     </form>
   );
 };

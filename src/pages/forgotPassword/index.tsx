@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/authcContext";
+import AccountBtns from "../components/accountBtns";
 
 const ForgotPassword: React.FC = () => {
   const [email, setEmail] = useState("");
@@ -37,7 +38,9 @@ const ForgotPassword: React.FC = () => {
             required
           />
         </div>
-        <button type="submit">Reset Password</button>
+        <AccountBtns type="submit" onClick={()=>{}}>
+            Reset
+        </AccountBtns>
       </form>
     </>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 import { createBrowserRouter, RouterProvider, RouteObject } from 'react-router-dom';
-import Cart from './cart';
+import Checkout from './Checkout';
 import ForgotPassword from './forgotPassword';
 import Home from './Home';
 import SignIn from './signIn';
@@ -10,10 +10,11 @@ import Layout from './components/Layout';
 
 const routes: RouteObject[] = [
   { path: '/', element: <Layout><PrivateRoute><Home /></PrivateRoute></Layout> },
-  { path: '/cart', element: <Layout><PrivateRoute><Cart /></PrivateRoute></Layout> },
+  { path: '/Checkout', element: <Layout><PrivateRoute><Checkout /></PrivateRoute></Layout> },
   { path: '/signup', element: <Layout><SignUp /></Layout> },
   { path: '/signin', element: <Layout><SignIn /></Layout> },
   { path: '/forgotPassword', element:<Layout><ForgotPassword /></Layout> },
+  { path: '/checkout',element:<Layout><Checkout/></Layout>}
   ];
 
 const Router = createBrowserRouter(routes);

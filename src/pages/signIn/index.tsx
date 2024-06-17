@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useAuth } from '../../contexts/authcContext';
 import { useNavigate } from 'react-router-dom';
+import AccountBtns from '../components/accountBtns';
 
 const SignIn: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -14,7 +15,7 @@ const SignIn: React.FC = () => {
     try {
       setError(null);
       await login(email, password);
-      navigate('/'); // 登录成功后导航到首页
+      navigate('/');
     } catch (error) {
       console.error('Failed to sign in', error);
       setError('Failed to sign in');
@@ -43,7 +44,9 @@ const SignIn: React.FC = () => {
           required
         />
       </div>
-      <button type="submit">Sign In</button>
+      <AccountBtns type='submit' onClick={()=>{}}>
+        Sign In
+      </AccountBtns>
     </form>
   );
 };
