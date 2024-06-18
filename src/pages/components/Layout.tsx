@@ -14,7 +14,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   const LogoBtn = () => {
     navigate('/')
-  }
+  };
 
   const SignInBtn = () => {
     navigate('/signin');
@@ -44,7 +44,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
       <header className=' p-2 bg-[#f63]'>
-        <nav className='flex justify-between w-[1200px]  mx-[auto] my-0 sticky'>
+        <nav className='flex justify-between w-[1200px] mx-[auto] my-0 py-1 sticky'>
           <div>
             <h1 onClick={LogoBtn}>Shopee</h1>
           </div>
@@ -56,7 +56,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               </>
             ) : (
               <>
-                 <button onClick={toggleCart} className="mx-2">Cart</button>
+                <button onClick={toggleCart} className="mx-2">Cart</button>
                 <button onClick={SignInBtn} className='mx-2'>SignIn</button>
                 <button onClick={SignUpBtn} className='mx-2'>SignUp</button>
                 <button onClick={ForgotPasswordBtn} className='mx-2'>Forgot</button>
