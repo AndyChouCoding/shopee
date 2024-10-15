@@ -9,6 +9,7 @@ const Cart:React.FC<CartProps> =({onCLose}) => {
     const navigate = useNavigate();
     const checkoutCart = () =>{
         navigate('/checkout')
+        
     };
     return<>
         <div className='bg-gray-200 w-[1200px] h-[500px] text-black absolute'>
@@ -20,7 +21,7 @@ const Cart:React.FC<CartProps> =({onCLose}) => {
                 </div>
             </div>
             <div>
-                shop
+                shop 
             </div>
             <div className="flex justify-center">
                 <button onClick={checkoutCart}>Checkout</button>
