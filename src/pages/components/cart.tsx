@@ -2,10 +2,10 @@ import { useNavigate } from "react-router-dom";
 import Product from "./product";
 
 interface CartProps {
-    onCLose: () => void;
+    onClose: () => void;
 }
 
-const Cart:React.FC<CartProps> =({onCLose}) => {
+const Cart:React.FC<CartProps> =({onClose}) => {
     const navigate = useNavigate();
     const checkoutCart = () =>{
         navigate('/checkout')
@@ -16,7 +16,7 @@ const Cart:React.FC<CartProps> =({onCLose}) => {
             <div className="flex justify-between bg-gray-400">
                 <div></div>
                 <div className=" m-2 px-1 border-2 border-solid border-black rounded-lg">
-                    <button onClick={onCLose}>X
+                    <button onClick={onClose}>X
                     </button>
                 </div>
             </div>

@@ -1,17 +1,23 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "../../contexts/authcContext";
 import Cart from "../components/cart";
+import BannerSection from "../Home/components/banner";
+import "./css/layout.css";
 
 interface LayoutProps {
   children: React.ReactNode;
 }
 
-
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   const [showCart, setShowCart] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
   const { currentUser, logout } = useAuth();
+
+  useEffect(() => {
+    setShowCart(false);
+  }, [location]);
 
   const LogoBtn = () => {
     navigate("/");
@@ -37,84 +43,167 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       console.log("Failed to log out", error);
     }
   };
+
   const toggleCart = () => {
     setShowCart(!showCart);
   };
-  const searchBtn = () =>{
-      console.log(' Search access')
-  }
+
+  const searchBtn = () => {
+    console.log("Search access");
+  };
 
   return (
     <>
-      <header className="md:bg-[#f63] xs:p-2">
-        <nav className=" w-[1200px] mx-[auto] my-0 py-1 sticky bg-[#f63] p-2">
-          {/* nav left */}
-          <div className="flex justify-between">
+      <header className="md:bg-[#f63] xs:p-2 text-white sticky top-0 z-[99]">
+        <nav className="w-[1200px] mx-[auto] my-0 py-1 sticky bg-[#f63]">
+          {/* nav top */}
+          <div className="flex justify-between text-[10px]">
             <div className="flex">
-              <div>賣家中心</div>
-              <div className="w-[1px] bg-gray-800 mx-2"></div>
-              <div>下載</div>
-              <div className="w-[1px] bg-gray-800 mx-2"></div>
-              <div>追蹤我們</div>
-              <div className="mx-2 mt-1">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-instagram" viewBox="0 0 16 16">
-                  <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
-                </svg>
-              </div>
-              <div className="mt-1">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-facebook" viewBox="0 0 16 16">
-                  <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
-                </svg>
-              </div>
+              <button onClick={() => console.log("click")}>賣家中心</button>
+              <div className="w-[1px] h-[10px] my-[auto] bg-white mx-2"></div>
+              <button onClick={() => console.log("click")}>下載</button>
+              <div className="w-[1px] h-[10px] my-[auto] bg-white mx-2"></div>
+              <button onClick={() => console.log("click")}>追蹤我們</button>
             </div>
             <div>
-                <div>
               {currentUser ? (
-                <>
-                  <button onClick={toggleCart} className="mx-2">
-                    Cart
-                  </button>
-                  <button onClick={() => {}} className="mx-2">
-                    account
-                  </button>
-                </>
+                <div className="flex items-center">
+                  <div className="">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      className="bi bi-person-circle"
+                      viewBox="0 0 16 16"
+                    >
+                      <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                      <path
+                        fillRule="evenodd"
+                        d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"
+                      />
+                    </svg>
+                  </div>
+                  <div id="UserId">
+                    <div className="mx-2 ">
+                      {currentUser.displayName || currentUser.email}
+                    </div>
+                    <div id="UserCoutorl" className="">
+                      <div className="p-1 border-solid border-1px border-[#000]">
+                        <a>我的帳戶</a>
+                      </div>
+                      <div className="p-1 border-solid border-1px border-[#000]">
+                        <a className="py-2">購物清單</a>
+                      </div>
+                      <div className="p-1 border-solid border-1px border-[#000]">
+                        <button onClick={Logout}>登出</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               ) : (
                 <>
-                  <button onClick={toggleCart} className="mx-2">
+                  <button onClick={toggleCart} className="mx-3">
                     Cart
                   </button>
-                  <button onClick={SignInBtn} className="mx-2">
+                  <button onClick={SignInBtn} className="mx-3">
                     SignIn
                   </button>
-                  <button onClick={SignUpBtn} className="mx-2">
+                  <button onClick={SignUpBtn} className="mx-3">
                     SignUp
                   </button>
-                  <button onClick={ForgotPasswordBtn} className="mx-2">
+                  <button onClick={ForgotPasswordBtn} className="">
                     Forgot
                   </button>
                 </>
               )}
             </div>
+          </div>
+          {/* nav mid */}
+          <div className="flex justify-between items-center mt-2">
+            <div className="flex items-center text-[26px]">
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="26"
+                  height="26"
+                  fill="currentColor"
+                  className="bi bi-bag"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z" />
+                </svg>
+              </div>
+              <h1 className="px-2" onClick={LogoBtn}>
+                Shopee
+              </h1>
+            </div>
+            <div>
+              <div className=" bg-white p-1 items-center">
+                <div>
+                  <input
+                    className="rounded-3xl p-2 mx-2 w-[700px] text-[#000]"
+                    type="text"
+                    placeholder="搜尋商品、品牌或賣場"
+                  />
+                  <button
+                    className="bg-[#f63] text-[#fff] py-2 px-6 rounded-xs"
+                    onClick={searchBtn}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      className="bi bi-search"
+                      viewBox="0 0 16 16"
+                    >
+                      <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div>
+              <button onClick={toggleCart} className="mx-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  className="bi bi-cart"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                </svg>
+              </button>
             </div>
           </div>
-          {/* nav right */}
-          <div className="flex justify-between my-4 items-center">
-            <div>
-              <h1 onClick={LogoBtn}>Shopee</h1>
-            </div>
-            <div>
-              <input className="mx-2 rounded-md p-2 w-[200px]" type="text" />
-              <button onClick={searchBtn}>search</button>
+          {/* nav down */}
+          <div className=" flex justify-center text-[12px] mt-1">
+            <div className="flex justify-between w-[700px]">
+              <a href="#">product</a>
+              <a href="#">product</a>
+              <a href="#">product</a>
+              <a href="#">product</a>
+              <a href="#">product</a>
+              <a href="#">product</a>
+              <a href="#">product</a>
+              <a href="#">product</a>
+              <a href="#">product</a>
             </div>
           </div>
         </nav>
       </header>
-      <div>
-        <main className=" w-[1200px] mx-[auto] my-0">
-          {showCart && <Cart onCLose={toggleCart} />}
+      <div className="">
+        <main className=" w-[1200px] mx-[auto]">
+          {showCart && <Cart onClose={toggleCart} />}
           {children}
         </main>
       </div>
+      <footer className=" w-[1200px] mx-[auto]">
+        footer
+      </footer>
     </>
   );
 };

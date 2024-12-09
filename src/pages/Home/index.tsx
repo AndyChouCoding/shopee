@@ -1,4 +1,7 @@
+import BannerSection from "./components/banner";
 import Product from "../components/product";
+import ProductClassification from "./components/productClassification";
+import DailyUpdate from "./components/dailyUpdates";
 
 const ProductDate = [{name:'Iphone14',img:'',}]
 
@@ -6,7 +9,15 @@ const ProductDate = [{name:'Iphone14',img:'',}]
 const Home = () => {
     return<>
         <div>
-            home
+            <div>
+                <BannerSection />
+            </div>
+            <div>
+                <ProductClassification/>
+            </div>
+            <div>
+                <DailyUpdate/>
+            </div>
         </div>
     </>
 } 
