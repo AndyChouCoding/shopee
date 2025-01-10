@@ -1,0 +1,10 @@
+[
+    {
+        "src":"/images/home/banner/bannerTop.jpeg",
+        "alt":"BannerTop"
+    },
+    {
+        "src":"images/home/banner/bannerBottom.jpeg",
+        "alt":"BannerBottom"
+    }
+]

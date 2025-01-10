@@ -1,17 +1,15 @@
 import React, { useEffect, useState } from "react";
 
-// 使用图片的相对路径
-
 
 const BannerCarousel: React.FC = () => {
   // 图片数组
   const images = [
-    { src: "../../../images/home/carousel/banner1.jpeg", alt: "Banner 1" },
-    { src: "../../../images/home/carousel/banner2.jpeg", alt: "Banner 2" },
-    { src: "../../../images/home/carousel/banner3.jpeg", alt: "Banner 3" },
-    { src: "../../../images/home/carousel/banner1.jpeg", alt: "Banner 1" },
-    { src: "../../../images/home/carousel/banner2.jpeg", alt: "Banner 2" },
-    { src: "../../../images/home/carousel/banner3.jpeg", alt: "Banner 3" },
+    { src: "/images/home/carousel/banner1.jpeg", alt: "Banner 1" },
+    { src: "/images/home/carousel/banner2.jpeg", alt: "Banner 2" },
+    { src: "/images/home/carousel/banner3.jpeg", alt: "Banner 3" },
+    { src: "/images/home/carousel/banner1.jpeg", alt: "Banner 1" },
+    { src: "/images/home/carousel/banner2.jpeg", alt: "Banner 2" },
+    { src: "/images/home/carousel/banner3.jpeg", alt: "Banner 3" },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
