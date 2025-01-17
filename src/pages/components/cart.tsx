@@ -12,7 +12,7 @@ const Cart:React.FC<CartProps> =({onClose}) => {
         
     };
     return<>
-        <div className='bg-gray-200 w-[1200px] h-[500px] text-black absolute'>
+        <div className='bg-gray-200 w-[1200px] h-[500px] text-black absolute z-50'>
             <div className="flex justify-between bg-gray-400">
                 <div></div>
                 <div className=" m-2 px-1 border-2 border-solid border-black rounded-lg">

@@ -4,6 +4,7 @@ import { useAuth } from "../../contexts/authcContext";
 import Cart from "../components/cart";
 import BannerSection from "../Home/components/banner";
 import "./css/layout.css";
+import Footer from "./footer";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -201,8 +202,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           {children}
         </main>
       </div>
-      <footer className=" w-[1200px] mx-[auto]">
-        footer
+      <footer>
+        <Footer/>
       </footer>
     </>
   );
