@@ -104,18 +104,20 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 </div>
               ) : (
                 <>
-                  <button onClick={toggleCart} className="mx-3">
-                    Cart
-                  </button>
-                  <button onClick={SignInBtn} className="mx-3">
-                    SignIn
-                  </button>
-                  <button onClick={SignUpBtn} className="mx-3">
-                    SignUp
-                  </button>
-                  <button onClick={ForgotPasswordBtn} className="">
-                    Forgot
-                  </button>
+                  <div className="flex justify-around">
+                    <button onClick={toggleCart} className="mx-3">
+                      Cart
+                    </button>
+                    <button onClick={SignInBtn} className="mx-3">
+                      SignIn
+                    </button>
+                    <button onClick={SignUpBtn} className="mx-3">
+                      SignUp
+                    </button>
+                    <button onClick={ForgotPasswordBtn} className="">
+                      Forgot
+                    </button>
+                  </div>
                 </>
               )}
             </div>
@@ -203,7 +205,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         </main>
       </div>
       <footer>
-        <Footer/>
+        <Footer />
       </footer>
     </>
   );

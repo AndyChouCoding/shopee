@@ -61,7 +61,7 @@ const Footer = () => {
     ]
 
     return<>
-        <div className=" w-[1200px] mx-[auto] flex justify-between my-4 pt-2 border-t-[1px] border-gray-300">
+        <div className=" w-[1200px] mx-[auto] flex justify-between mb-4 pt-2 border-t-[1px] border-gray-300">
             <div>
                 <h3 className="my-2 font-bold">客服中心</h3>
                 <ul className="text-[12px] text-gray-500">

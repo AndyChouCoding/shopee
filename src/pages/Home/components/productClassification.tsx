@@ -9,12 +9,12 @@ interface ItemsProps {
 
 const Items: React.FC<ItemsProps> = ({ ListName, ListPic }) => {
   return (
-    <div className="">
+    <a className="" href="#">
       <div className="flex justify-center p-4 w-[120px]">
         <img src={ListPic} alt={ListName} className="w-10 h-10" />
       </div>
       <p className="text-center text-sm ">{ListName}</p>
-    </div>
+    </a>
   );
 };
 

@@ -11,11 +11,11 @@ interface ProductItem {
 const Items: React.FC<ProductItem> = ({ productName, productImage, productPrice }) => {
   const formattedPrice = new Intl.NumberFormat("en-US", {
     style: "currency",
-    currency: "USD",
+    currency: "TWD",
   }).format(productPrice);
 
   return (
-    <div className="w-full p-2">
+    <a className="w-full p-2" href="#">
       <div>
         <img src={productImage} alt={productName} className="w-full h-[150px] object-cover" />
       </div>
@@ -23,7 +23,7 @@ const Items: React.FC<ProductItem> = ({ productName, productImage, productPrice 
         <p className="text-center">{productName}</p>
         <p className="text-center text-[#f63] font-bold">{formattedPrice}</p>
       </div>
-    </div>
+    </a>
   );
 };
 
