@@ -33,7 +33,7 @@ const SignIn: React.FC = () => {
     >
       <form
         onSubmit={handleSubmit}
-        className=" bg-yellow-100 p-2 mt-[150px] mr-[30px] w-[500px] h-[400px] flex justify-center"
+        className=" bg-white p-2 mt-[150px] mr-[30px] w-[500px] h-[400px] flex justify-center"
       >
         <div className="">
           <h2 className="my-4 text-[20px]">登入</h2>
