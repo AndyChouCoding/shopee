@@ -91,7 +91,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                     </div>
                     <div id="UserCoutorl" className="">
                       <div className="p-1 border-solid border-1px border-[#000]">
-                        <a>我的帳戶</a>
+                        <a href="/account">我的帳戶</a>
                       </div>
                       <div className="p-1 border-solid border-1px border-[#000]">
                         <a className="py-2">購物清單</a>

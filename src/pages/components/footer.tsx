@@ -59,6 +59,11 @@ const Footer = () => {
             cocailImage:"images/global/icon/ins.png"
         }
     ]
+    //QRcode
+    const QrCode = {
+        QrCodeName:"Shopee",
+        QrCodeImage:"images/global/qrcode.png"
+    }
 
     return<>
         <div className=" w-[1200px] mx-[auto] flex justify-between mb-4 pt-2 border-t-[1px] border-gray-300">
@@ -126,8 +131,9 @@ const Footer = () => {
             <div>
                 <h3 className="my-2 font-bold">下載蝦皮</h3>
                 <div className="flex">
-                    <div>qrcode</div>
-                    <div>link</div>
+                    <div>
+                        <img className="w-[70px]" src={QrCode.QrCodeImage} alt={QrCode.QrCodeName} />
+                    </div>
                 </div>
             </div>
         </div>
