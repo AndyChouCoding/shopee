@@ -74,7 +74,7 @@ const SignIn: React.FC = () => {
             登入
           </AccountBtns>
           <div className="flex justify-between my-2 text-[12px] text-blue-700 ">
-            <a href="#">忘記密碼</a>
+            <a href="/forgotPassword">忘記密碼</a>
             <a href="#">使用簡訊登入</a>
           </div>
           <div className="flex items-center justify-between w-full">

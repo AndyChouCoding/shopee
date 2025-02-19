@@ -25,7 +25,7 @@ const ForgotPassword: React.FC = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      {/* <form onSubmit={handleSubmit}>
         <h2>Forgot Password</h2>
         {message && <p>{message}</p>}
         {error && <p>{error}</p>}
@@ -41,7 +41,46 @@ const ForgotPassword: React.FC = () => {
         <AccountBtns type="submit" onClick={()=>{}}>
             Reset
         </AccountBtns>
-      </form>
+      </form> */}
+       <div
+    className="flex justify-end h-[700px]"
+    style={{
+      backgroundImage: "url('/images/signIn/bg.png')",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+    }}
+  >
+    <form
+      onSubmit={handleSubmit}
+      className=" bg-white p-2 mt-[250px] mr-[30px] w-[500px] h-[230px] flex justify-center"
+    >
+      <div className="">
+        <h2 className="my-4 text-[20px]">忘記密碼</h2>
+        {error && <p>{error}</p>}
+        <div className="my-4">
+          <div>
+            <label>登入信箱</label>
+          </div>
+          <div>
+            <input
+              className=" border-[1px] border-[soild] border-black px-2 py-1 w-[350px]"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
+        </div>
+        <AccountBtns
+          type="submit"
+          className="bg-[#f63] text-white p-2 w-[350px]"
+          onClick={() => {}}
+        >
+          發送認證信
+        </AccountBtns>
+      </div>
+    </form>
+  </div>
     </>
   );
 };

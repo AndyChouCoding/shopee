@@ -105,17 +105,11 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               ) : (
                 <>
                   <div className="flex justify-around">
-                    <button onClick={toggleCart} className="mx-3">
-                      Cart
+                    <button onClick={SignUpBtn} className="mx-3">
+                      註冊
                     </button>
                     <button onClick={SignInBtn} className="mx-3">
-                      SignIn
-                    </button>
-                    <button onClick={SignUpBtn} className="mx-3">
-                      SignUp
-                    </button>
-                    <button onClick={ForgotPasswordBtn} className="">
-                      Forgot
+                      登入
                     </button>
                   </div>
                 </>
