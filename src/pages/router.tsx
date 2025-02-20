@@ -1,5 +1,5 @@
 import React from "react";
-import { createBrowserRouter, Outlet, RouteObject } from "react-router-dom";
+import { createBrowserRouter, Navigate, RouteObject } from "react-router-dom";
 import Checkout from "./Checkout";
 import ForgotPassword from "./forgotPassword";
 import Home from "./Home";
@@ -19,7 +19,7 @@ import SettingsPage from "./account/pages/settingspage";
 const routes: RouteObject[] = [
   {
     path: "/",
-    element: <Layout><Outlet /></Layout>,
+    element: <Layout children={undefined} />, // ✅ `Outlet` 會由 `Layout.tsx` 控制
     children: [
       { index: true, element: <PrivateRoute><Home /></PrivateRoute> },
       { path: "checkout", element: <PrivateRoute><Checkout /></PrivateRoute> },
@@ -30,7 +30,7 @@ const routes: RouteObject[] = [
         path: "account",
         element: <PrivateRoute><AccountPage /></PrivateRoute>,
         children: [
-          { index: true, element: <ProfilePage /> }, // ✅ `/account` 進入時，載入 `ProfilePage`
+          { index: true, element: <Navigate to="/account/profile" replace /> }, // ✅ 進入 `/account` 時自動跳轉到 `/account/profile`
           { path: "profile", element: <ProfilePage /> },
           { path: "settings", element: <SettingsPage /> },
           { path: "orders", element: <OrdersPage /> },

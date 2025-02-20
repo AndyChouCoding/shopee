@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, Outlet } from "react-router-dom";
 import { useAuth } from "../../contexts/authcContext";
 import Cart from "../components/cart";
 import BannerSection from "../Home/components/banner";
@@ -196,6 +196,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <main className=" w-[1200px] mx-[auto]">
           {showCart && <Cart onClose={toggleCart} />}
           {children}
+          <Outlet/>
         </main>
       </div>
       <footer>

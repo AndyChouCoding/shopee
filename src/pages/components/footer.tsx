@@ -8,61 +8,61 @@ const Footer = () => {
     const pay = [
         {
             PayName:"MasterCard",
-            payImg:"images/global/masterCard.png"
+            payImg:"/images/global/masterCard.png"
         },
         {
             PayName:"visaCard",
-            payImg:"images/global/visaCard.png"
+            payImg:"/images/global/visaCard.png"
         },
         {
             PayName:"jcbCard",
-            payImg:"images/global/jcbCard.png"
+            payImg:"/images/global/jcbCard.png"
         }
     ]
     //shopImg
     const shop = [
         {
             shopName:"711Shop",
-            shopImage:"images/global/711Shop.png"
+            shopImage:"/images/global/711Shop.png"
         },
         {
             shopName:"familyShop",
-            shopImage:"images/global/familyShop.png"
+            shopImage:"/images/global/familyShop.png"
         },
         {
             shopName:"hilifeShop",
-            shopImage:"images/global/hilifeShop.png"
+            shopImage:"/images/global/hilifeShop.png"
         },
         {
             shopName:"okShop",
-            shopImage:"images/global/okShop.png"
+            shopImage:"/images/global/okShop.png"
         }
     ]
     //environmentalFriendlyImage
     const environmentalFriendly = [
         {
             Environmentalfriendly:"Environmentalfriendly",
-            EnvironmentalfriendlyImage:"images/global/Environmental friendly.png"
+            EnvironmentalfriendlyImage:"/images/global/Environmental friendly.png"
         }
     ]
     const socailImage = [
         {
             cocailName:"facebook",
-            cocailImage:"images/global/icon/facebook.png"
+            cocailImage:"/images/global/icon/facebook.png"
         },
         {
             cocailName:"line",
-            cocailImage:"images/global/icon/line.png"
+            cocailImage:"/images/global/icon/line.png"
         },
         {
             cocailName:"instagram",
-            cocailImage:"images/global/icon/ins.png"
+            cocailImage:"/images/global/icon/ins.png"
         }
     ]
     //QRcode
     const QrCode = {
         QrCodeName:"Shopee",
-        QrCodeImage:"images/global/qrcode.png"
+        QrCodeImage:"/images/global/qrcode.png"
     }
 
     return<>
