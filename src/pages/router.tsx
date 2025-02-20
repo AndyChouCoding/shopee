@@ -14,11 +14,12 @@ import NotificationsPage from "./account/pages/notificationspage";
 import CouponsPage from "./account/pages/couponspage";
 import CoinsPage from "./account/pages/coinspage";
 import TransactionsPage from "./account/pages/transactionspage";
+import SettingsPage from "./account/pages/settingspage";
 
 const routes: RouteObject[] = [
   {
     path: "/",
-    element: <Layout children={<Outlet />} />, // ✅ 確保 `children` 正確傳遞
+    element: <Layout><Outlet /></Layout>,
     children: [
       { index: true, element: <PrivateRoute><Home /></PrivateRoute> },
       { path: "checkout", element: <PrivateRoute><Checkout /></PrivateRoute> },
@@ -29,8 +30,9 @@ const routes: RouteObject[] = [
         path: "account",
         element: <PrivateRoute><AccountPage /></PrivateRoute>,
         children: [
-          { index: true, element: <div>請選擇左側選單進入不同的管理頁面。</div> }, 
-          { path: "profile", element: <ProfilePage /> }, 
+          { index: true, element: <ProfilePage /> }, // ✅ `/account` 進入時，載入 `ProfilePage`
+          { path: "profile", element: <ProfilePage /> },
+          { path: "settings", element: <SettingsPage /> },
           { path: "orders", element: <OrdersPage /> },
           { path: "notifications", element: <NotificationsPage /> },
           { path: "coupons", element: <CouponsPage /> },
