@@ -1,5 +1,5 @@
 import BannerSection from "./components/banner";
-import Product from "../components/product";
+import Product from "../components/productList";
 import ProductClassification from "./components/productClassification";
 import DailyUpdate from "./components/dailyUpdates";
 

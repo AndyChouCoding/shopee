@@ -1,43 +1,45 @@
-import Product from "../../../mockDate/porduct.json";
+import React from "react";
+import { Link } from "react-router-dom";
+import ProductCategoriesData from "../../../mockDate/product.json"; // ✅ 確保正確載入 JSON
 
-
-// 图标组件
-interface ItemsProps {
-  ListName: string;
-  ListPic: string;
+// ✅ 定義類型
+interface Category {
+  categoryId: string;
+  categoryName: string;
+  categoryImage: string;
 }
 
-const Items: React.FC<ItemsProps> = ({ ListName, ListPic }) => {
+// ✅ 明確指定 `ProductCategories` 的類型
+const ProductCategories: Category[] = ProductCategoriesData as Category[];
+
+// 單個分類卡片
+const CategoryCard: React.FC<Category> = ({ categoryId, categoryName, categoryImage }) => {
   return (
-    <a className="" href="#">
-      <div className="flex justify-center p-4 w-[120px]">
-        <img src={ListPic} alt={ListName} className="w-10 h-10" />
+    <Link to={`/category/${categoryId}`} className="block w-[100px] text-center">
+      <div className="flex justify-center p-4">
+        <img src={categoryImage} alt={categoryName} className="w-14 h-14 object-cover" />
       </div>
-      <p className="text-center text-sm ">{ListName}</p>
-    </a>
+      <p className="text-sm font-medium">{categoryName}</p>
+    </Link>
   );
 };
 
-interface Product {
-  productList: string;
-  productName: string;
-}
-
+// 商品分類頁面
 const ProductClassification: React.FC = () => {
-  const product: Product[] = Product;
   return (
-    <>
-     <div>
-      <section className="w-[1200px] mx-auto shadow-sm pb-2 bg-slate-200">
-        {/* 图标区域 */}
-        <div className="flex flex-wrap">
-          {product.map((product, index) => (
-            <Items key={index} ListName={product.productName} ListPic={product.productList} />
-          ))}
-        </div>
-      </section>
-    </div>
-    </>
+    <section className="w-[1200px] mx-auto shadow-sm pb-4 bg-slate-200">
+      <h2 className="text-xl font-bold text-center py-4">商品分類</h2>
+      <div className="flex flex-wrap justify-center gap-4">
+        {ProductCategories.map((category) => (
+          <CategoryCard
+            key={category.categoryId}
+            categoryId={category.categoryId}
+            categoryName={category.categoryName}
+            categoryImage={category.categoryImage}
+          />
+        ))}
+      </div>
+    </section>
   );
 };
 

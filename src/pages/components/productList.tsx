@@ -1,4 +1,4 @@
-const Product = () => {
+const ProductList = () => {
   return (
     <>
       <div className="flex justify-around my-4">
@@ -24,4 +24,4 @@ const Product = () => {
     </>
   );
 };
-export default Product;
+export default ProductList;

@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import Product from "./product";
+import Product from "./productList";
 
 interface CartProps {
     onClose: () => void;

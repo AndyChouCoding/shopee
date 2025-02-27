@@ -1,92 +1,112 @@
 [
-    {
+    {   
+        "id":1,
         "productName":"iphone",
+        "description": "fakeDescription",
         "productImage":"/images/product/iphone.jpg",
-        "productPrice":200
+        "productPrice":2000
     },
-    {
+    {   "id":2,
         "productName":"dress",
+        "description": "fakeDescription",
         "productImage":"/images/product/dress.jpg",
-        "productPrice":100
+        "productPrice":1080
     },
-    {
+    {   "id":3,
         "productName":"iphone",
+        "description": "fakeDescription",
         "productImage":"/images/product/iphone.jpg",
-        "productPrice":200
+        "productPrice":8200
     },
-    {
+    {   "id":4,
         "productName":"iphone",
+        "description": "fakeDescription",
         "productImage":"/images/product/iphone.jpg",
-        "productPrice":200
+        "productPrice":7200
     },
-    {
+    {   "id":5,
         "productName":"iphone",
+        "description": "fakeDescription",
         "productImage":"/images/product/iphone.jpg",
-        "productPrice":200
+        "productPrice":2700
     },
-    {
+    {   "id":6,
         "productName":"dress",
+        "description": "fakeDescription",
         "productImage":"/images/product/dress.jpg",
-        "productPrice":100
+        "productPrice":1600
     },
-    {
+    {   "id":7,
         "productName":"iphone",
+        "description": "fakeDescription",
         "productImage":"/images/product/iphone.jpg",
-        "productPrice":200
+        "productPrice":2300
     },
-    {
+    {   "id":8,
         "productName":"iphone",
+        "description": "fakeDescription",
         "productImage":"/images/product/iphone.jpg",
-        "productPrice":200
+        "productPrice":3200
     },
-    {
+    {   "id":9,
         "productName":"iphone",
+        "description": "fakeDescription",
         "productImage":"/images/product/iphone.jpg",
-        "productPrice":200
+        "productPrice":2600
     },
-    {
+    {   "id":10,
         "productName":"dress",
+        "description": "fakeDescription",
         "productImage":"/images/product/dress.jpg",
-        "productPrice":100
+        "productPrice":6100
     },
-    {
+    {   "id":11,
         "productName":"iphone",
+        "description": "fakeDescription",
         "productImage":"/images/product/iphone.jpg",
-        "productPrice":200
+        "productPrice":2600
     },
-    {
+    {   "id":12,
         "productName":"iphone",
+        "description": "fakeDescription",
         "productImage":"/images/product/iphone.jpg",
-        "productPrice":200
+        "productPrice":2300
     },
-    {
+    {   "id":13,
         "productName":"iphone",
+        "description": "fakeDescription",
         "productImage":"/images/product/iphone.jpg",
-        "productPrice":200
+        "productPrice":2500
     },
-    {
+    {   "id":14,
         "productName":"dress",
+        "description": "fakeDescription",
         "productImage":"/images/product/dress.jpg",
-        "productPrice":100
+        "productPrice":1100
     },
-    {
+    {   "id":15,
         "productName":"iphone",
+        "description": "fakeDescription",
         "productImage":"/images/product/iphone.jpg",
-        "productPrice":200
+        "productPrice":2010
     },
-    {
+    {   "id":16,
         "productName":"iphone",
+        "description": "fakeDescription",
         "productImage":"/images/product/iphone.jpg",
-        "productPrice":200
+        "productPrice":2100
     },
-    {
+    {   "id":17,
         "productName":"iphone",
+        "description": "fakeDescription",
         "productImage":"/images/product/iphone.jpg",
-        "productPrice":200
+        "productPrice":2200
     },
-    {
+    {   "id":18,
         "productName":"dress",
+        "description": "fakeDescription",
         "productImage":"/images/product/dress.jpg",
-        "productPrice":100
-    }  
+        "productPrice":1200
+    }
+
 ]

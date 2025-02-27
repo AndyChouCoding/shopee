@@ -1,0 +1,332 @@
+[
+    {
+      "categoryId": "women-clothing",
+      "categoryName": "女生衣著",
+      "categoryImage": "/images/home/productList/productList1.png",
+      "products": [
+        {
+          "productId": "1",
+          "productName": "夏季連衣裙",
+          "description": "輕盈透氣、時尚設計的連衣裙。",
+          "productImage": "/images/product/women_dress1.jpg",
+          "productPrice": 1080
+        },
+        {
+          "productId": "12",
+          "productName": "夏季連衣裙",
+          "description": "輕盈透氣、時尚設計的連衣裙。",
+          "productImage": "/images/product/women_dress1.jpg",
+          "productPrice": 1080
+        },
+        {
+          "productId": "13",
+          "productName": "夏季連衣裙",
+          "description": "輕盈透氣、時尚設計的連衣裙。",
+          "productImage": "/images/product/women_dress1.jpg",
+          "productPrice": 1080
+        },
+        {
+          "productId": "14",
+          "productName": "夏季連衣裙",
+          "description": "輕盈透氣、時尚設計的連衣裙。",
+          "productImage": "/images/product/women_dress1.jpg",
+          "productPrice": 1080
+        },
+        {
+          "productId": "15",
+          "productName": "夏季連衣裙",
+          "description": "輕盈透氣、時尚設計的連衣裙。",
+          "productImage": "/images/product/women_dress1.jpg",
+          "productPrice": 1080
+        },
+        {
+          "productId": "16",
+          "productName": "夏季連衣裙",
+          "description": "輕盈透氣、時尚設計的連衣裙。",
+          "productImage": "/images/product/women_dress1.jpg",
+          "productPrice": 1080
+        },
+        {
+          "productId": "17",
+          "productName": "夏季連衣裙",
+          "description": "輕盈透氣、時尚設計的連衣裙。",
+          "productImage": "/images/product/women_dress1.jpg",
+          "productPrice": 1080
+        },
+        {
+          "productId": "18",
+          "productName": "夏季連衣裙",
+          "description": "輕盈透氣、時尚設計的連衣裙。",
+          "productImage": "/images/product/women_dress1.jpg",
+          "productPrice": 1080
+        }
+      ]
+    },
+    {
+      "categoryId": "men-clothing",
+      "categoryName": "男生衣著",
+      "categoryImage": "/images/home/productList/productList2.png",
+      "products": [
+        {
+          "productId": "2",
+          "productName": "純棉襯衫",
+          "description": "適合正式與休閒場合的高品質襯衫。",
+          "productImage": "/images/product/men_shirt1.jpg",
+          "productPrice": 899
+        }
+      ]
+    },
+    {
+      "categoryId": "sports-fitness",
+      "categoryName": "運動健身",
+      "categoryImage": "/images/home/productList/productList3.png",
+      "products": [
+        {
+          "productId": "3",
+          "productName": "專業運動鞋",
+          "description": "提供極佳回彈力與舒適度的運動鞋。",
+          "productImage": "/images/product/sport_shoes1.jpg",
+          "productPrice": 2200
+        }
+      ]
+    },
+    {
+      "categoryId": "shoes",
+      "categoryName": "男女鞋",
+      "categoryImage": "/images/home/productList/productList4.png",
+      "products": [
+        {
+          "productId": "4",
+          "productName": "休閒運動鞋",
+          "description": "輕便舒適，適合日常穿搭。",
+          "productImage": "/images/product/casual_shoes1.jpg",
+          "productPrice": 1500
+        }
+      ]
+    },
+    {
+      "categoryId": "women-accessories",
+      "categoryName": "女生配件",
+      "categoryImage": "/images/home/productList/productList5.png",
+      "products": [
+        {
+          "productId": "5",
+          "productName": "珍珠耳環",
+          "description": "簡約典雅，適合各種場合的飾品。",
+          "productImage": "/images/product/pearl_earrings1.jpg",
+          "productPrice": 450
+        }
+      ]
+    },
+    {
+      "categoryId": "beauty",
+      "categoryName": "美妝保養",
+      "categoryImage": "/images/home/productList/productList6.png",
+      "products": [
+        {
+          "productId": "6",
+          "productName": "保濕面膜",
+          "description": "深層滋潤，改善乾燥膚質。",
+          "productImage": "/images/product/face_mask1.jpg",
+          "productPrice": 200
+        }
+      ]
+    },
+    {
+      "categoryId": "entertainment",
+      "categoryName": "娛樂收藏",
+      "categoryImage": "/images/home/productList/productList7.png",
+      "products": [
+        {
+          "productId": "7",
+          "productName": "限量版模型",
+          "description": "收藏價值高的精緻模型。",
+          "productImage": "/images/product/collectible_model1.jpg",
+          "productPrice": 3500
+        }
+      ]
+    },
+    {
+      "categoryId": "pets",
+      "categoryName": "寵物",
+      "categoryImage": "/images/home/productList/productList8.png",
+      "products": [
+        {
+          "productId": "8",
+          "productName": "寵物零食",
+          "description": "健康美味，適合各種寵物。",
+          "productImage": "/images/product/pet_treats1.jpg",
+          "productPrice": 150
+        }
+      ]
+    },
+    {
+      "categoryId": "mobile-tablet",
+      "categoryName": "手機平板與周邊",
+      "categoryImage": "/images/home/productList/productList9.png",
+      "products": [
+        {
+          "productId": "9",
+          "productName": "智慧型手機保護殼",
+          "description": "耐摔設計，時尚實用。",
+          "productImage": "/images/product/smartphone_case1.jpg",
+          "productPrice": 300
+        }
+      ]
+    },
+    {
+      "categoryId": "electronics",
+      "categoryName": "3C與筆電",
+      "categoryImage": "/images/home/productList/productList10.png",
+      "products": [
+        {
+          "productId": "10",
+          "productName": "筆記型電腦",
+          "description": "輕薄高效能筆電，適合工作與學習。",
+          "productImage": "/images/product/laptop1.jpg",
+          "productPrice": 32000
+        }
+      ]
+    },
+    {
+      "categoryId": "books-magazines",
+      "categoryName": "書籍及雜誌週刊",
+      "categoryImage": "/images/home/productList/productList11.png",
+      "products": [
+        {
+          "productId": "11",
+          "productName": "文學經典",
+          "description": "精選文學經典，提升閱讀品味。",
+          "productImage": "/images/product/classic_book1.jpg",
+          "productPrice": 450
+        }
+      ]
+    },
+    {
+      "categoryId": "home-living",
+      "categoryName": "居家生活",
+      "categoryImage": "/images/home/productList/productList12.png",
+      "products": [
+        {
+          "productId": "12",
+          "productName": "創意家飾",
+          "description": "精緻設計，提升居家氛圍。",
+          "productImage": "/images/product/home_decor1.jpg",
+          "productPrice": 680
+        }
+      ]
+    },
+    {
+      "categoryId": "food-gift",
+      "categoryName": "美食伴手禮",
+      "categoryImage": "/images/home/productList/productList13.png",
+      "products": [
+        {
+          "productId": "13",
+          "productName": "伴手禮盒",
+          "description": "精美包裝，適合送禮。",
+          "productImage": "/images/product/gift_box1.jpg",
+          "productPrice": 980
+        }
+      ]
+    },
+    {
+      "categoryId": "auto-parts",
+      "categoryName": "汽車零件百貨",
+      "categoryImage": "/images/home/productList/productList14.png",
+      "products": [
+        {
+          "productId": "14",
+          "productName": "汽車空氣濾清器",
+          "description": "提高車輛性能的必備零件。",
+          "productImage": "/images/product/car_filter1.jpg",
+          "productPrice": 560
+        }
+      ]
+    },
+    {
+      "categoryId": "gaming",
+      "categoryName": "電玩遊戲",
+      "categoryImage": "/images/home/productList/productList15.png",
+      "products": [
+        {
+          "productId": "15",
+          "productName": "PlayStation 5",
+          "description": "次世代遊戲主機，極致遊戲體驗。",
+          "productImage": "/images/product/ps5.jpg",
+          "productPrice": 15000
+        }
+      ]
+    },
+    {
+      "categoryId": "healthcare",
+      "categoryName": "保健護理",
+      "categoryImage": "/images/home/productList/productList16.png",
+      "products": [
+        {
+          "productId": "16",
+          "productName": "保健食品",
+          "description": "促進健康的營養補充品。",
+          "productImage": "/images/product/health_supplement1.jpg",
+          "productPrice": 1200
+        }
+      ]
+    },
+    {
+      "categoryId": "baby-mom",
+      "categoryName": "嬰幼童與母親",
+      "categoryImage": "/images/home/productList/productList17.png",
+      "products": [
+        {
+          "productId": "17",
+          "productName": "嬰兒推車",
+          "description": "輕便安全，適合外出使用。",
+          "productImage": "/images/product/stroller1.jpg",
+          "productPrice": 4500
+        }
+      ]
+    },
+    {
+      "categoryId": "women-bags",
+      "categoryName": "女生包包精品",
+      "categoryImage": "/images/home/productList/productList18.png",
+      "products": [
+        {
+          "productId": "18",
+          "productName": "時尚手提包",
+          "description": "經典設計，百搭時尚。",
+          "productImage": "/images/product/women_bag1.jpg",
+          "productPrice": 3200
+        }
+      ]
+    },
+    {
+      "categoryId": "men-bags",
+      "categoryName": "男生包包配件",
+      "categoryImage": "/images/home/productList/productList19.png",
+      "products": [
+        {
+          "productId": "19",
+          "productName": "多功能背包",
+          "description": "適合通勤與旅行的設計。",
+          "productImage": "/images/product/men_backpack1.jpg",
+          "productPrice": 2800
+        }
+      ]
+    },
+    {
+      "categoryId": "outdoor-travel",
+      "categoryName": "戶外旅行",
+      "categoryImage": "/images/home/productList/productList20.png",
+      "products": [
+        {
+          "productId": "20",
+          "productName": "登山背包",
+          "description": "大容量耐用，適合長途旅行。",
+          "productImage": "/images/product/hiking_backpack1.jpg",
+          "productPrice": 3200
+        }
+      ]
+    }
+  ]
+  
