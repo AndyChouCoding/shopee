@@ -5,6 +5,7 @@ import Cart from "../components/cart";
 import BannerSection from "../Home/components/banner";
 import "./css/layout.css";
 import Footer from "./footer";
+import { useCart } from "../../contexts/cartContext";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -15,10 +16,19 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   const navigate = useNavigate();
   const location = useLocation();
   const { currentUser, logout } = useAuth();
+  const { state } = useCart();
+  const cartQuantity = state.cartItems.reduce(
+    (total, item) => total + item.quantity,
+    0
+  );
 
   useEffect(() => {
     setShowCart(false);
   }, [location]);
+
+  const toggleCart = () => {
+    setShowCart(!showCart);
+  };
 
   const LogoBtn = () => {
     navigate("/");
@@ -32,10 +42,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     navigate("/signup");
   };
 
-  const ForgotPasswordBtn = () => {
-    navigate("/forgotPassword");
-  };
-
   const Logout = async () => {
     try {
       await logout();
@@ -45,18 +51,14 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     }
   };
 
-  const toggleCart = () => {
-    setShowCart(!showCart);
-  };
-
   const searchBtn = () => {
     console.log("Search access");
   };
 
   return (
     <>
-      <header className="md:bg-[#f63] xs:p-2 text-white sticky top-0 z-[99]">
-        <nav className="w-[1200px] mx-[auto] my-0 py-1 sticky bg-[#f63]">
+      <header className="md:bg-[#f63] xs:p-2 text-white sticky top-0 z-[99] ">
+        <nav className="w-[1200px] mx-[auto] my-0 py-1 sticky bg-[#f63] ">
           {/* nav top */}
           <div className="flex justify-between text-[10px]">
             <div className="flex">
@@ -94,7 +96,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                         <a href="/account/profile">我的帳戶</a>
                       </div>
                       <div className="p-1 border-solid border-1px border-[#000]">
-                        <a className="py-2" href="/shopinglist">購物清單</a>
+                        <a className="py-2" href="/shopinglist">
+                          購物清單
+                        </a>
                       </div>
                       <div className="p-1 border-solid border-1px border-[#000]">
                         <button onClick={Logout}>登出</button>
@@ -161,8 +165,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 </div>
               </div>
             </div>
+            {/* Cart btn */}
             <div>
-              <button onClick={toggleCart} className="mx-3">
+              <button onClick={toggleCart} className="mx-3 relative">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -173,11 +178,16 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 >
                   <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
                 </svg>
+                {cartQuantity > 0 && (
+                  <span className="absolute top-[-6px] right-[-6px] bg-red-500 text-white text-xs rounded-full px-1">
+                    {cartQuantity}
+                  </span>
+                )}
               </button>
             </div>
           </div>
           {/* nav down */}
-          <div className=" flex justify-center text-[12px] mt-1">
+          <div className=" flex justify-center text-[12px] mt-1 ">
             <div className="flex justify-between w-[700px]">
               <a href="#">product</a>
               <a href="#">product</a>
@@ -193,10 +203,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         </nav>
       </header>
       <div className="">
-        <main className=" w-[1200px] mx-[auto]">
+        <main className=" w-[1200px] mx-[auto] ">
           {showCart && <Cart onClose={toggleCart} />}
           {children}
-          <Outlet/>
+          <Outlet />
         </main>
       </div>
       <footer>

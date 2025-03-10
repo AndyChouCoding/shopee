@@ -16,9 +16,9 @@ import CoinsPage from "./account/pages/coinspage";
 import TransactionsPage from "./account/pages/transactionspage";
 import SettingsPage from "./account/pages/settingspage";
 import ShopingList from "./shopinglist";
-import ProductList from "./components/productList";
+// import ProductList from "./components/productList";
 import CategoryPage from "./categoryDetail/index"; // 🆕 新增商品分類頁
-import ProductDetailPage from "./productDetailPage/index"; // 🆕 新增商品詳情頁
+import ProductDetailPage from "./productDetailPage/index"; 
 
 const routes: RouteObject[] = [
   {
@@ -31,7 +31,7 @@ const routes: RouteObject[] = [
       { path: "signin", element: <SignIn /> },
       { path: "forgotPassword", element: <ForgotPassword /> },
       { path: "shopinglist", element: <ShopingList /> },
-      { path: "productList", element: <ProductList /> },
+      // { path: "productList", element: <ProductList /> },
 
       // 🆕 商品分類頁（顯示該分類的所有商品）
       { path: "category/:categoryId", element: <CategoryPage /> },
