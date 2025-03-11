@@ -18,30 +18,45 @@ import SettingsPage from "./account/pages/settingspage";
 import ShopingList from "./shopinglist";
 // import ProductList from "./components/productList";
 import CategoryPage from "./categoryDetail/index"; // 🆕 新增商品分類頁
-import ProductDetailPage from "./productDetailPage/index"; 
+import ProductDetailPage from "./productDetailPage/index";
+import OrderConfirmation from "./orderConfirmation";
 
 const routes: RouteObject[] = [
   {
     path: "/",
     element: <Layout children={undefined} />,
     children: [
-      { index: true, element: <PrivateRoute><Home /></PrivateRoute> },
-      { path: "checkout", element: <PrivateRoute><Checkout /></PrivateRoute> },
+      {
+        index: true,
+        element: (
+          <PrivateRoute>
+            <Home />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "checkout",
+        element: (
+          <PrivateRoute>
+            <Checkout />
+          </PrivateRoute>
+        ),
+      },
       { path: "signup", element: <SignUp /> },
       { path: "signin", element: <SignIn /> },
       { path: "forgotPassword", element: <ForgotPassword /> },
       { path: "shopinglist", element: <ShopingList /> },
-      // { path: "productList", element: <ProductList /> },
-
-      // 🆕 商品分類頁（顯示該分類的所有商品）
       { path: "category/:categoryId", element: <CategoryPage /> },
-
-      // 🆕 商品詳情頁（顯示某個商品的詳細資訊）
       { path: "product/:productId", element: <ProductDetailPage /> },
-
+      { path: "checkout", element: <Checkout /> },
+      { path: "orderConfirmation", element: <OrderConfirmation /> },
       {
         path: "account",
-        element: <PrivateRoute><AccountPage /></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <AccountPage />
+          </PrivateRoute>
+        ),
         children: [
           { index: true, element: <Navigate to="/account/profile" replace /> },
           { path: "profile", element: <ProfilePage /> },
@@ -51,6 +66,7 @@ const routes: RouteObject[] = [
           { path: "coupons", element: <CouponsPage /> },
           { path: "coins", element: <CoinsPage /> },
           { path: "transactions", element: <TransactionsPage /> },
+
         ],
       },
     ],

@@ -68,9 +68,16 @@ const cartReducer = (state: CartState, action: CartAction): CartState => {
     case "CLEAR_CART":
       return { ...state, cartItems: [] };
 
-    case "SET_ORDER_DETAILS":
-      return { ...state, orderDetails: action.order };
-
+      case "SET_ORDER_DETAILS":
+        return {
+          ...state,
+          orderDetails: {
+            items: action.order.items,
+            totalAmount: action.order.totalAmount, // ✅ 確保 `totalAmount` 存入 state
+            shippingAddress: action.order.shippingAddress,
+            paymentMethod: action.order.paymentMethod,
+          },
+        };
     default:
       return state;
   }

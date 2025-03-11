@@ -1,4 +1,3 @@
-// checkout.tsx
 import React, { useState } from "react";
 import { useCart } from "../../contexts/cartContext";
 import { useNavigate } from "react-router-dom";
@@ -9,11 +8,30 @@ const Checkout: React.FC = () => {
   const [paymentMethod, setPaymentMethod] = useState("credit-card");
   const navigate = useNavigate();
 
+  // ✅ 計算總金額
+  const totalAmount = state.cartItems.reduce((sum, item) => sum + item.productPrice * item.quantity, 0);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    dispatch({ type: "SET_ORDER_DETAILS", order: { ...state.orderDetails!, shippingAddress, paymentMethod } });
+
+    if (state.cartItems.length === 0) {
+      alert("購物車是空的，無法結帳！");
+      return;
+    }
+
+    // ✅ 傳遞正確的 `totalAmount` 值到 `SET_ORDER_DETAILS`
+    dispatch({
+      type: "SET_ORDER_DETAILS",
+      order: {
+        items: state.cartItems,
+        totalAmount,
+        shippingAddress,
+        paymentMethod,
+      },
+    });
+
     dispatch({ type: "CLEAR_CART" });
-    navigate("/order-confirmation");
+    navigate("/orderConfirmation");
   };
 
   return (
@@ -22,10 +40,13 @@ const Checkout: React.FC = () => {
       <ul>
         {state.cartItems.map((item) => (
           <li key={item.productId} className="border p-2">
-            <p>{item.productName} - ${item.productPrice} x {item.quantity}</p>
+            <p>
+              {item.productName} - ${item.productPrice} x {item.quantity}
+            </p>
           </li>
         ))}
       </ul>
+      <p className="text-xl font-bold mt-4">總金額：${totalAmount.toFixed(2)}</p>
       <form onSubmit={handleSubmit}>
         <label>收件地址</label>
         <input className="border p-2 w-full" value={shippingAddress} onChange={(e) => setShippingAddress(e.target.value)} required />
