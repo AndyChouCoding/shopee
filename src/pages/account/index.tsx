@@ -64,7 +64,7 @@ const AccountPage = () => {
 
           {/* 其他選單 */}
           <NavLink
-            to="/account/orders"
+            to="/account/orderHistory"
             className={({ isActive }) => (isActive ? "text-orange-500 font-bold" : "text-gray-700")}
           >
             <div className="py-2">購買清單</div>

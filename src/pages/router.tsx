@@ -9,17 +9,17 @@ import PrivateRoute from "../components/PrivateRouter";
 import Layout from "./components/Layout";
 import AccountPage from "./account";
 import ProfilePage from "./account/pages/profilpage";
-import OrdersPage from "./account/pages/orderpage";
+import OrdersPage from "./account/pages/orderHistory";
 import NotificationsPage from "./account/pages/notificationspage";
 import CouponsPage from "./account/pages/couponspage";
 import CoinsPage from "./account/pages/coinspage";
 import TransactionsPage from "./account/pages/transactionspage";
 import SettingsPage from "./account/pages/settingspage";
 import ShopingList from "./shopinglist";
-// import ProductList from "./components/productList";
-import CategoryPage from "./categoryDetail/index"; // 🆕 新增商品分類頁
+import CategoryPage from "./categoryDetail/index";
 import ProductDetailPage from "./productDetailPage/index";
 import OrderConfirmation from "./orderConfirmation";
+import OrderHistory from "./account/pages/orderHistory";
 
 const routes: RouteObject[] = [
   {
@@ -61,7 +61,7 @@ const routes: RouteObject[] = [
           { index: true, element: <Navigate to="/account/profile" replace /> },
           { path: "profile", element: <ProfilePage /> },
           { path: "settings", element: <SettingsPage /> },
-          { path: "orders", element: <OrdersPage /> },
+          { path: "orderHistory", element: <OrderHistory /> },
           { path: "notifications", element: <NotificationsPage /> },
           { path: "coupons", element: <CouponsPage /> },
           { path: "coins", element: <CoinsPage /> },

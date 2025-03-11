@@ -1,8 +1,7 @@
-// cartContext.tsx
-import React, { createContext, useContext, useReducer } from "react";
+import React, { createContext, useContext, useReducer, ReactNode } from "react";
 
-// 購物車商品類型
-interface CartItem {
+// 定義購物車商品類型
+export interface CartItem {
   productId: string;
   productName: string;
   productImage: string;
@@ -10,89 +9,92 @@ interface CartItem {
   quantity: number;
 }
 
-// 訂單資料
-interface OrderDetails {
+// 定義訂單資料類型
+export interface OrderDetails {
   items: CartItem[];
   totalAmount: number;
   shippingAddress: string;
   paymentMethod: string;
 }
 
-// 購物車狀態
+// 定義購物車狀態類型，增加 orderHistory
 interface CartState {
   cartItems: CartItem[];
   orderDetails?: OrderDetails;
+  orderHistory: OrderDetails[];
 }
 
-// 購物車操作類型
+// 定義購物車動作類型
 type CartAction =
   | { type: "ADD_TO_CART"; product: CartItem }
   | { type: "REMOVE_FROM_CART"; productId: string }
   | { type: "UPDATE_QUANTITY"; productId: string; quantity: number }
   | { type: "CLEAR_CART" }
-  | { type: "SET_ORDER_DETAILS"; order: OrderDetails };
+  | { type: "SET_ORDER_DETAILS"; order: OrderDetails }
+  | { type: "ADD_ORDER_HISTORY"; order: OrderDetails };
 
-// 初始狀態
 const initialState: CartState = {
   cartItems: [],
+  orderHistory: [],
 };
 
-// 購物車 Reducer
 const cartReducer = (state: CartState, action: CartAction): CartState => {
   switch (action.type) {
-    case "ADD_TO_CART":
-      const existingItem = state.cartItems.find((item) => item.productId === action.product.productId);
+    case "ADD_TO_CART": {
+      const existingItem = state.cartItems.find(item => item.productId === action.product.productId);
       if (existingItem) {
         return {
           ...state,
-          cartItems: state.cartItems.map((item) =>
+          cartItems: state.cartItems.map(item =>
             item.productId === action.product.productId
-              ? { ...item, quantity: item.quantity + 1 }
+              ? { ...item, quantity: item.quantity + action.product.quantity }
               : item
           ),
         };
       }
-      return { ...state, cartItems: [...state.cartItems, { ...action.product, quantity: 1 }] };
-
+      return { ...state, cartItems: [...state.cartItems, { ...action.product, quantity: action.product.quantity }] };
+    }
     case "REMOVE_FROM_CART":
-      return { ...state, cartItems: state.cartItems.filter((item) => item.productId !== action.productId) };
-
+      return { ...state, cartItems: state.cartItems.filter(item => item.productId !== action.productId) };
     case "UPDATE_QUANTITY":
       return {
         ...state,
-        cartItems: state.cartItems.map((item) =>
+        cartItems: state.cartItems.map(item =>
           item.productId === action.productId ? { ...item, quantity: action.quantity } : item
         ),
       };
-
     case "CLEAR_CART":
       return { ...state, cartItems: [] };
-
       case "SET_ORDER_DETAILS":
-        return {
-          ...state,
-          orderDetails: {
-            items: action.order.items,
-            totalAmount: action.order.totalAmount, // ✅ 確保 `totalAmount` 存入 state
-            shippingAddress: action.order.shippingAddress,
-            paymentMethod: action.order.paymentMethod,
-          },
+        const newOrder = {
+          ...action.order,
+          items: state.cartItems, // ✅ 存入當前購物車的商品
+          totalAmount: state.cartItems.reduce((total, item) => total + item.productPrice * item.quantity, 0), // ✅ 計算總金額
         };
+        return { 
+          ...state, 
+          orderDetails: newOrder, 
+          orderHistory: [...state.orderHistory, newOrder] // ✅ 存入歷史訂單
+        };
+    case "ADD_ORDER_HISTORY":
+      return { ...state, orderHistory: [...state.orderHistory, action.order] };
     default:
       return state;
   }
 };
 
-// 建立 Context
-const CartContext = createContext<{ state: CartState; dispatch: React.Dispatch<CartAction> } | undefined>(undefined);
+interface CartContextType {
+  state: CartState;
+  dispatch: React.Dispatch<CartAction>;
+}
 
-// Provider
-export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+const CartContext = createContext<CartContextType | undefined>(undefined);
+
+export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [state, dispatch] = useReducer(cartReducer, initialState);
   return <CartContext.Provider value={{ state, dispatch }}>{children}</CartContext.Provider>;
 };
 
-// 自定義 Hook
 export const useCart = () => {
   const context = useContext(CartContext);
   if (!context) {
